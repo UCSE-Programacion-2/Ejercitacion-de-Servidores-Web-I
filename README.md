@@ -6,12 +6,12 @@ Este ejercicio está diseñado para practicar y evaluar tus conocimientos sobre 
 
 Debés crear un servidor HTTP en Node.js que escuche en el puerto 3000 y maneje las siguientes rutas:
 
-| Ruta | Respuesta |
-|------|-----------|
-| `/` | "Bienvenid@s! Gracias por tu visita." |
-| `/nosotros` | "Bienvenid@s a saber + de nosotros :)" |
-| `/cursos` | "Te interesan nuestros cursos. Vení a conocer la oferta!" |
-| `/contacto` | "Si querés contactarnos, hacelo a este Email: :)" |
+| Ruta                | Respuesta                                                      |
+| ------------------- | -------------------------------------------------------------- |
+| `/`                 | "Bienvenid@s! Gracias por tu visita."                          |
+| `/nosotros`         | "Bienvenid@s a saber + de nosotros :)"                         |
+| `/cursos`           | "Te interesan nuestros cursos. Vení a conocer la oferta!"      |
+| `/contacto`         | "Si querés contactarnos, hacelo a este Email: :)"              |
 | Cualquier otra ruta | Código 404 y mensaje: "No se ha encontrado la ruta ingresada." |
 
 Para todas las rutas, debes establecer el encabezado `Content-Type` como `text/plain` y el conjunto de caracteres a `utf-8`.
@@ -69,15 +69,12 @@ proyecto/
    npm test
    ```
 
-### Cómo Probar Manualmente
+### Cómo Probar Manualmente (api.http)
 
-1. Inicia el servidor: `npm start`
-2. Abre un navegador y visita:
-   - `http://localhost:3000/`
-   - `http://localhost:3000/nosotros`
-   - `http://localhost:3000/cursos`
-   - `http://localhost:3000/contacto`
-   - Cualquier otra ruta para verificar el manejo de errores 404
+1. Inicia el servidor: `npm start` (o `npm run dev` para recarga automática).
+2. Instala la extensión **REST Client** en VS Code o Cursor.
+3. Abre el archivo `api.http` en la raíz del proyecto.
+4. Haz clic en "Send Request" encima de cada bloque `###` para ejecutar las peticiones y visualizar las respuestas del servidor.
 
 ## Evaluación Automática
 
@@ -88,6 +85,7 @@ npm test
 ```
 
 Las pruebas verificarán:
+
 - Que cada ruta devuelva el mensaje correcto
 - Que se utilice el código de estado HTTP apropiado
 - Que se configuren correctamente los encabezados de respuesta
@@ -105,5 +103,15 @@ Las pruebas verificarán:
 - [Documentación oficial de Node.js sobre el módulo HTTP](https://nodejs.org/api/http.html)
 - [MDN Web Docs: HTTP response status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
 - [MDN Web Docs: HTTP headers](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)
+
+## Herramientas de editor (ESLint / Prettier / VS Code)
+
+Este repositorio incluye configuración estandarizada de linters y formateo.
+
+- **Configuración activa**: La raíz del proyecto ya contiene los archivos `.eslintrc.json` y `.prettierrc.js` activos.
+- **Referencia**: En la carpeta `Configuration-Files/backend-nodejs/` hay una copia de referencia del estándar (nota: el `package.json` de allí incluye Express/Mongo que no se usan en este ejercicio).
+- **Comandos útiles**:
+  - `npm run lint` (verifica errores de código).
+  - `npm run format` (aplica el formato correcto con Prettier).
 
 ¡Buena suerte con el ejercicio!
